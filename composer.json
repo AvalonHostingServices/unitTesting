@@ -1,0 +1,17 @@
+{
+    "name": "avalon/unit-testing",
+    "description": "The basic Unit Testing Skeleton using PHPUnit",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Engr. Arif Ahmed Joy",
+            "email": "arif@avalonhosting.services"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}
