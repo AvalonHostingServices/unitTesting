@@ -1,11 +1,10 @@
 <?php
-declare(strict_types=1);
 
-final class Email
+class LogMeIn
 {
     private $email;
 
-    private function __construct(string $email)
+    public function __construct(string $email)
     {
         $this->ensureIsValidEmail($email);
 

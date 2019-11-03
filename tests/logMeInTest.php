@@ -6,13 +6,13 @@ require_once 'vendor/autoload.php';
 
 use PHPUnit\Framework\TestCase;
 
-final class EmailTest extends TestCase
+final class LogMeInTest extends TestCase
 {
     public function testCanBeCreatedFromValidEmailAddress(): void
     {
         $this->assertInstanceOf(
-            Email::class,
-            Email::fromString('user@example.com')
+            LogMeIn::class,
+            LogMeIn::fromString('user@example.com')
         );
     }
 
@@ -20,14 +20,14 @@ final class EmailTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        Email::fromString('invalid');
+        LogMeIn::fromString('user@example');
     }
 
     public function testCanBeUsedAsString(): void
     {
         $this->assertEquals(
             'user@example.com',
-            Email::fromString('user@example.com')
+            LogMeIn::fromString('user@example.com')
         );
     }
 }
