@@ -31,10 +31,13 @@
                         <button name="submit" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     <?php } else {
-                        echo (empty($_REQUEST['email']) || empty($_REQUEST['password'])) ? 'Fields cannot be blank':'';
-                        require_once 'src/logMeIn.php';
-                        $login = new LogMeIn($_REQUEST['email']);
-                        echo 'Successfully Logged in!';
+                        if(empty($_REQUEST['email']) || empty($_REQUEST['password'])) {
+                            echo '<p class="alert-danger py-2 px-auto text-center">Fields cannot be blank</p>';
+                        } else {
+                            require_once 'src/logMeIn.php';
+                            $login = new LogMeIn($_REQUEST['email']);
+                            echo '<p class="alert-success py-2 px-auto text-center">You\'ve Successfully Logged in!</p>';
+                        }
                     } ?>
                 </div>
             </div>
